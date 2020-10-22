@@ -1,10 +1,10 @@
 
-public class Proceso {
+public class ProcesoImpresion {
 
 	String nombre;
 	int duracion;
 	
-	public Proceso(String nombre, int duracion) {
+	public ProcesoImpresion(String nombre, int duracion) {
 		super();
 		this.nombre = nombre;
 		this.duracion = duracion;

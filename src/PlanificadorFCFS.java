@@ -5,15 +5,15 @@ import java.util.Queue;
 
 public class PlanificadorFCFS {
 	
-	private static Queue<Proceso> queue;
+	private static Queue<ProcesoImpresion> queue;
 	
 	static {
-		queue = new LinkedList<Proceso>();
+		queue = new LinkedList<ProcesoImpresion>();
 	}
 
 	private static void Collection() {
 		
-		Queue<Proceso> cola;
+		Queue<ProcesoImpresion> cola = new Queue<ProcesoImpresion>(;
 		
 		
 		Collections.shuffle((List<?>) cola);
@@ -21,16 +21,16 @@ public class PlanificadorFCFS {
 		
 	}
 	
-	private static void Get(Queue<Proceso> cola) {
+	private static void Get(Queue<ProcesoImpresion> cola) {
 		cola.poll();
 	}
 	
-	private static void Put(Proceso proceso, Queue<Proceso> cola) {
+	private static void Put(ProcesoImpresion proceso) {
 		
-		cola.add(proceso);
+		queue.add(proceso);
 	}
 	
-	private static void Sirve(Queue<Proceso> cola) {
+	private static void Sirve(Queue<ProcesoImpresion> cola) {
 		
 		for (int i = 0; i < 5; i++) {
 			Get(cola);
