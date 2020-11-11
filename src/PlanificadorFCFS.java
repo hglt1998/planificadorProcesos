@@ -4,37 +4,47 @@ import java.util.List;
 import java.util.Queue;
 
 public class PlanificadorFCFS {
-	
-	private static Queue<ProcesoImpresion> queue;
-	
-	static {
-		queue = new LinkedList<ProcesoImpresion>();
+
+	Queue<Proceso> colaProcesos = new LinkedList<>();
+	Proceso procesoEnEjecucion;
+
+	public PlanificadorFCFS() {
+
 	}
 
-	private static void Collection() {
-		
-		Queue<ProcesoImpresion> cola = new Queue<ProcesoImpresion>(;
-		
-		
-		Collections.shuffle((List<?>) cola);
-		
-		
+	public Proceso get() {
+		// Devuelve el ultimo proceso de la cola y lo elimina
+
+		return colaProcesos.poll();
+
 	}
-	
-	private static void Get(Queue<ProcesoImpresion> cola) {
-		cola.poll();
+
+	public void put(Proceso procesoAIntroducir) {
+		// Incluye proceso en el planificador
+		colaProcesos.add(procesoAIntroducir);
+
 	}
-	
-	private static void Put(ProcesoImpresion proceso) {
-		
-		queue.add(proceso);
-	}
-	
-	private static void Sirve(Queue<ProcesoImpresion> cola) {
-		
-		for (int i = 0; i < 5; i++) {
-			Get(cola);
+
+	public void sirve() throws InterruptedException {
+		// Randomiza las posiciones
+		Collections.shuffle((List<?>) colaProcesos);
+
+		// Obtenemos el primer proceso y entramos en el bucle
+		procesoEnEjecucion = get();
+		while (procesoEnEjecucion != null) {
+
+			// El bucle llamara al metodo get hasta que reciba un null(Fin de la cola)
+
+			// Con cada proceso escribira su nombre,duracion y esperara lo que dure ésta
+
+			System.out.println("Proceso   " + procesoEnEjecucion.getNombre() + " Tiempo de ejecución "
+					+ procesoEnEjecucion.getDuracion());
+			Thread.sleep(procesoEnEjecucion.getDuracion());
+			System.out.println("Fin de proceso");
+			procesoEnEjecucion = get();
 		}
-		
+		// Al terminar el bucle
+		System.out.println("Fin de todos los procesos");
 	}
+
 }
