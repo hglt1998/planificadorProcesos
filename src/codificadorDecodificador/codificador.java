@@ -15,16 +15,16 @@ public class codificador {
 				BufferedWriter filtroEscritura = new BufferedWriter(new FileWriter(ARCHIVO_DESTINO))){
 			
 			String linea;
-			String lineaCodificada = null;
+			StringBuilder lineaCodificada = new StringBuilder();
 			
 			linea = filtroLectura.readLine();
 			
 			while (linea != null) {
-				lineaCodificada = codifica(linea);
+				lineaCodificada.append(codifica(linea));
 				linea = filtroLectura.readLine();
 			}
 			
-			filtroEscritura.write(lineaCodificada);
+			filtroEscritura.write(lineaCodificada.toString());
 			
 			
 		} catch (IOException e) {
