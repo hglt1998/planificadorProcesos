@@ -13,9 +13,8 @@ public class Principal8 {
 		System.out.println(variables);
 		
 		List <String> lCommand = new ArrayList<String>();
-		lCommand.add("CMD");
-		lCommand.add("/C");
-		lCommand.add("DIRRR");
+		lCommand.add("ls");
+		lCommand.add("--help");
 		
 		ProcessBuilder pb = new ProcessBuilder(lCommand);
 		System.out.println(pb.command());
