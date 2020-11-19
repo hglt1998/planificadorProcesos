@@ -1,3 +1,4 @@
+package planificador;
 
 public class Proceso  implements Comparable<Proceso>{
 	private int duracion;
