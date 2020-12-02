@@ -8,9 +8,9 @@ import java.util.Map;
 public class Principal8 {
 
 	public static void main(String[] args) {
-		ProcessBuilder pENV = new ProcessBuilder();
-		Map <String, String> variables = pENV.environment();
-		System.out.println(variables);
+//		ProcessBuilder pENV = new ProcessBuilder();
+//		Map <String, String> variables = pENV.environment();
+//		System.out.println(variables);
 		
 		List <String> lCommand = new ArrayList<String>();
 		lCommand.add("ls");
