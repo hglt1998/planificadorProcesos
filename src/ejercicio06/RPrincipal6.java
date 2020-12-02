@@ -1,7 +1,4 @@
-/**
- * 
- */
-package ejercicio6;
+package ejercicio06;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,13 +7,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class Principal6 {
+
+public class RPrincipal6 {
 
 	public static void main(String[] args) {
 		Runtime rt = Runtime.getRuntime();
-//		String comandoLinux = "lsss -help";
-		String comandoWindows = "CMD /C DIRRRR";
-		String comando = comandoWindows;
+		String comandoLinux = "lsss -help";
+		String comando = comandoLinux;
 		Process p = null;
 		try {
 			p = rt.exec(comando);
@@ -36,8 +33,7 @@ public class Principal6 {
 			br = new BufferedReader(new InputStreamReader(errStream));
 			
 			bw = new BufferedWriter(
-					new FileWriter(
-							"log_err_ejercicio6.txt"));
+					new FileWriter("log_err_ejercicio6.txt"));
 			
 			String linea;
 			while ((linea = br.readLine())!=null) {

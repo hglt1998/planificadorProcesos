@@ -1,4 +1,4 @@
-package ejercicio7;
+package ejercicio07;
 
 import java.io.IOException;
 
